@@ -1,0 +1,16 @@
+name: Run on PR to action/*
+
+on:
+  pull_request:
+    paths:
+      - 'action/**'
+
+jobs:
+  run-if-action-files-changed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Do something
+        run: echo "Changes detected in action/ directory"
